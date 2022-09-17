@@ -12,10 +12,31 @@
   "activationEvents": [
     "onCommand:programmerhumor.helloWorld",
     "onCommand:programmerhumor.memeTime",
-    "onCommand:programmerhumor.refresh"
+    "onCommand:programmerhumor.refresh",
+    "onView:meme-sidebar"
   ],
   "main": "./dist/extension.js",
   "contributes": {
+    "viewsContainers": {
+      "activitybar": [
+        {
+          "id": "meme-sidebar-view",
+          "title": "Programmer Humor",
+          "icon": "media/checklist.svg"
+        }
+      ]
+    },
+    "views": {
+      "meme-sidebar-view": [
+        {
+          "type": "webview",
+          "id": "meme-sidebar",
+          "name": "Programmer Humor",
+          "icon": "media/checklist.svg",
+          "contextualTitle": "Programmer Humor"
+        }
+      ]
+    },
     "commands": [
       {
         "command": "programmerhumor.helloWorld",
@@ -61,8 +82,8 @@
     "eslint": "^8.20.0",
     "glob": "^8.0.3",
     "mocha": "^10.0.0",
-    "rollup": "^2.79.0",
-    "rollup-plugin-svelte": "^7.1.0",
+    "rollup": "^2.3.4",
+    "rollup-plugin-svelte": "^6.0.0",
     "rollup-plugin-terser": "^7.0.2",
     "svelte": "^3.50.1",
     "svelte-check": "^2.9.0",
