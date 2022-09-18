@@ -13,6 +13,7 @@
     "onCommand:programmerhumor.helloWorld",
     "onCommand:programmerhumor.memeTime",
     "onCommand:programmerhumor.refresh",
+    "onCommand:programmerhumor.addTodo",
     "onView:meme-sidebar"
   ],
   "main": "./dist/extension.js",
@@ -52,6 +53,11 @@
         "command": "programmerhumor.refresh",
         "category": "ProgrammerHumor",
         "title": "Refresh"
+      },
+      {
+        "command": "programmerhumor.addTodo",
+        "category": "ProgrammerHumor",
+        "title": "Add todo from selection"
       }
     ]
   },

@@ -32,6 +32,27 @@ export function activate(context: vscode.ExtensionContext) {
 		vscode.window.registerWebviewViewProvider("meme-sidebar", sidebarProvider)
 	  );
 
+	  context.subscriptions.push(
+		vscode.commands.registerCommand('programmerhumor.addTodo', () => {
+			console.log("add todo")
+			const { activeTextEditor } = vscode.window;
+
+			if (!activeTextEditor) {
+				vscode.window.showInformationMessage("No active text editor");
+				return;
+			}
+
+			const text = activeTextEditor.document.getText(
+				activeTextEditor.selection
+			);
+
+			sidebarProvider._view?.webview.postMessage({
+				type: "new-todo",
+				value: text,
+			});
+		})
+	)
+
 	context.subscriptions.push(
 		vscode.commands.registerCommand("programmerhumor.refresh", async () => {
 		//   HelloWorldPanel.kill();
