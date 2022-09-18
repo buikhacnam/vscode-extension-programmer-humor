@@ -1,7 +1,8 @@
 {
   "name": "programmerhumor",
-  "displayName": "ProgrammerHumor",
-  "description": "Take 5 second break to watch some programming memes right on your vscode ide",
+  "displayName": "Programmer Humor",
+  "publisher": "CaseyBui",
+  "description": "Enjoy programming memes inside on your VSCode.",
   "version": "0.0.1",
   "engines": {
     "vscode": "^1.71.0"
