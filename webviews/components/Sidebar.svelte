@@ -1,9 +1,33 @@
-<script lang='ts'></script>
-
-<style>
-    div {
-        color: red;
-    }
-</style>
-<div>Hi 2222</div>
-<img src='https://cdn.24h.com.vn/upload/3-2022/images/2022-09-17//1663428055-245-thumbnail-width740height495_anh_cat_3_2.jpg' />
+<script>
+    import { onMount } from "svelte";
+    import { apiData, drinkNames } from './store.js';
+    
+    onMount(async () => {
+      fetch("https://www.reddit.com/r/ProgrammerHumor.json")
+      .then(response => response.json())
+      .then(data => {
+            console.log(data?.data);
+        apiData.set(data?.data);
+      }).catch(error => {
+        console.log(error);
+        return [];
+      });
+    });
+    </script>
+    
+    <main>
+        <h1>Programmer Humor</h1>
+        <span>Made by <a href='https://github.com/buikhacnam' target="_blank">Casey Bui</a> with ❤️ </span>
+        {#each $drinkNames as drinkName}
+            <div>
+                <br/>
+                <br/>
+                <h2>{drinkName.title}</h2>
+                <img src={drinkName.img}  alt=''/>
+            </div>
+        {/each}
+    </main>
+    
+    <style>
+    
+    </style>
