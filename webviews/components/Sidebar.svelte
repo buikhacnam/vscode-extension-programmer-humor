@@ -1,4 +1,41 @@
-<script>
+<script lang='ts'>
+    let todos: Array<{text: string, completed: boolean}> = []
+    let text = ''
+</script>
+
+<style>
+    .completed {
+        text-decoration: line-through;
+    }
+</style>
+
+<form
+    on:submit|preventDefault={e => {
+        todos = [{text, completed: false}, ...todos]
+        text = ''
+    }}
+>
+<input bind:value={text}/>
+</form>
+
+
+<ul>
+    <!-- (todo.text) is the key -->
+    {#each todos as todo (todo.text)} 
+        <li 
+            class:completed={todo.completed}
+            on:click={() => {
+                todo.completed = !todo.completed
+            }}
+        >{todo.text}</li>
+    {/each}
+</ul>
+
+
+
+
+<!-- -------------------------------------------------------------------------------------------------------- -->
+<!-- <script>
     import { onMount } from "svelte";
     import { apiData, drinkNames } from './store.js';
     
@@ -6,28 +43,28 @@
       fetch("https://www.reddit.com/r/ProgrammerHumor.json")
       .then(response => response.json())
       .then(data => {
-            console.log(data?.data);
+            // console.log(data?.data);
         apiData.set(data?.data);
       }).catch(error => {
         console.log(error);
         return [];
       });
     });
-    </script>
+</script>
     
-    <main>
-        <h1>Programmer Humor</h1>
-        <span>Made by <a href='https://github.com/buikhacnam' target="_blank">Casey Bui</a> with ❤️ </span>
-        {#each $drinkNames as drinkName}
-            <div>
-                <br/>
-                <br/>
-                <h2>{drinkName.title}</h2>
-                <img src={drinkName.img}  alt=''/>
-            </div>
-        {/each}
-    </main>
+<main>
+    <h1>Programmer Humor</h1>
+    <span>Made by <a href='https://github.com/buikhacnam' target="_blank">Casey Bui</a> with ❤️ </span>
+    {#each $drinkNames as drinkName}
+        <div>
+            <br/>
+            <br/>
+            <h2>{drinkName.title}</h2>
+            <img src={drinkName.img}  alt=''/>
+        </div>
+    {/each}
+</main>
     
-    <style>
-    
-    </style>
+<style>
+
+</style> -->
