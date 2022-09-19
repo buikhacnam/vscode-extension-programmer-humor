@@ -1,54 +1,3 @@
-<!-- <script lang='ts'>
-	import { onMount } from 'svelte'
-
-
-    let todos: Array<{text: string, completed: boolean}> = []
-    let text = ''
-
-    onMount(async () => {
-        window.addEventListener('message', event => {
-            const message = event.data
-            console.log(message)
-            switch (message.type) {
-                case 'new-todo':
-                    todos = [{text: message.value, completed: false}, ...todos]
-                    break
-            }
-        })
-    })
-</script>
-
-<style>
-    .completed {
-        text-decoration: line-through;
-    }
-</style>
-
-<form
-    on:submit|preventDefault={e => {
-        todos = [{text, completed: false}, ...todos]
-        text = ''
-    }}
->
-<input bind:value={text}/>
-</form>
-
-
-<ul>
-    {#each todos as todo (todo.text)} 
-        <li 
-            class:completed={todo.completed}
-            on:click={() => {
-                todo.completed = !todo.completed
-            }}
-        >{todo.text}</li>
-    {/each}
-</ul> -->
-
-
-
-
-<!-- -------------------------------------------------------------------------------------------------------- -->
 <script>
     import { onMount } from "svelte";
     import { apiData, drinkNames } from './store.js';
@@ -69,8 +18,6 @@
 </script>
     
 <main>
-    <h1>Programmer Humor</h1>
-    <span>Made by <a href='https://github.com/buikhacnam' target="_blank">Casey Bui</a> with ❤️</span>
 
     {#each $drinkNames as drinkName}
         <div>
@@ -93,7 +40,9 @@
             </button>
         </div>
     {/each}
-
+    <br/>
+    <p>Made by <a href='https://github.com/buikhacnam' target="_blank">Casey Bui</a> with ❤️</p>
+    <br/>
 
 </main>
     

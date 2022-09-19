@@ -13,81 +13,29 @@ export function activate(context: vscode.ExtensionContext) {
 		'Congratulations, your extension "programmerhumor" is now active!'
 	)
 
-	// The command has been defined in the package.json file
-	// Now provide the implementation of the command with registerCommand
-	// The commandId parameter must match the command field in package.json
-	
-	
-	context.subscriptions.push(
-		vscode.commands.registerCommand('programmerhumor.helloWorld', () => {
-			// The code you place here will be executed every time your command is executed
-			// Display a message box to the user
-			// vscode.window.showInformationMessage('Hi Mom from ProgrammerHumor!')
-			HelloWorldPanel.createOrShow(context.extensionUri);
-		})
-	)
 	const sidebarProvider = new SidebarProvider(context.extensionUri);
 
 	context.subscriptions.push(
 		vscode.window.registerWebviewViewProvider("meme-sidebar", sidebarProvider)
 	  );
 
-	  context.subscriptions.push(
-		vscode.commands.registerCommand('programmerhumor.addTodo', () => {
-			console.log("add todo")
-			const { activeTextEditor } = vscode.window;
-
-			if (!activeTextEditor) {
-				vscode.window.showInformationMessage("No active text editor");
-				return;
-			}
-
-			const text = activeTextEditor.document.getText(
-				activeTextEditor.selection
-			);
-
-			sidebarProvider._view?.webview.postMessage({
-				type: "new-todo",
-				value: text,
-			});
-		})
-	)
 
 	context.subscriptions.push(
-		vscode.commands.registerCommand("programmerhumor.refresh", async () => {
+		vscode.commands.registerCommand("programmerhumor.memes", async () => {
 		//   HelloWorldPanel.kill();
 		//   HelloWorldPanel.createOrShow(context.extensionUri);
 		  await vscode.commands.executeCommand("workbench.action.closeSidebar");
 		  await vscode.commands.executeCommand(
 			"workbench.view.extension.meme-sidebar-view"
 		  );
-		  setTimeout(() => {
-		    vscode.commands.executeCommand(
-		      "workbench.action.webview.openDeveloperTools"
-		    );
-		  }, 500);
+		//   setTimeout(() => {
+		//     vscode.commands.executeCommand(
+		//       "workbench.action.webview.openDeveloperTools"
+		//     );
+		//   }, 500);
 		})
 	  );
 
-
-	context.subscriptions.push(
-		vscode.commands.registerCommand(
-			'programmerhumor.memeTime',
-			async () => {
-				const answer = await vscode.window.showInformationMessage(
-					'meme Time huh?',
-					'fuck yeahhhh!',
-					'no thanks!'
-				)
-
-				if (answer === 'fuck yeahhhh!') {
-					vscode.window.showInformationMessage('There you go!')
-				} else {
-					vscode.window.showInformationMessage('ok then')
-				}
-			}
-		)
-	)
 }
 
 // this method is called when your extension is deactivated

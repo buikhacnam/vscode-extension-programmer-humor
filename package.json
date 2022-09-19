@@ -2,8 +2,8 @@
   "name": "programmerhumor",
   "displayName": "Programmer Humor",
   "publisher": "CaseyBui",
-  "description": "Enjoy programming memes inside on your VSCode.",
-  "version": "0.0.2",
+  "description": "Enjoy programming memes inside your VSCode.",
+  "version": "0.0.3",
   "icon": "logo.png",
   "engines": {
     "vscode": "^1.71.0"
@@ -12,10 +12,7 @@
     "Other"
   ],
   "activationEvents": [
-    "onCommand:programmerhumor.helloWorld",
-    "onCommand:programmerhumor.memeTime",
-    "onCommand:programmerhumor.refresh",
-    "onCommand:programmerhumor.addTodo",
+    "onCommand:programmerhumor.memes",
     "onView:meme-sidebar"
   ],
   "main": "./dist/extension.js",
@@ -42,24 +39,9 @@
     },
     "commands": [
       {
-        "command": "programmerhumor.helloWorld",
-        "title": "Hello World",
-        "category": "ProgrammerHumor"
-      },
-      {
-        "command": "programmerhumor.memeTime",
+        "command": "programmerhumor.memes",
         "category": "ProgrammerHumor",
-        "title": "Meme Time?"
-      },
-      {
-        "command": "programmerhumor.refresh",
-        "category": "ProgrammerHumor",
-        "title": "Refresh"
-      },
-      {
-        "command": "programmerhumor.addTodo",
-        "category": "ProgrammerHumor",
-        "title": "Add todo from selection"
+        "title": "Memes Time"
       }
     ]
   },
