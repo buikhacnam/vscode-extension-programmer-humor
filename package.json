@@ -3,7 +3,7 @@
   "displayName": "Programmer Humor",
   "publisher": "CaseyBui",
   "description": "Enjoy programming memes inside your VSCode.",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "icon": "logo.png",
   "engines": {
     "vscode": "^1.71.0"
@@ -11,6 +11,10 @@
   "categories": [
     "Other"
   ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/buikhacnam/vscode-extension-programmer-humor"
+  },
   "activationEvents": [
     "onCommand:programmerhumor.memes",
     "onView:meme-sidebar"
