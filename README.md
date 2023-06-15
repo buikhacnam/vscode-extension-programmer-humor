@@ -35,8 +35,6 @@ Website: [https://buinam.com](https://buinam.com)
 
 Github: [https://github.com/buikhacnam](https://github.com/buikhacnam)
 
-Youtube Chanel: [https://www.youtube.com/channel/UCvdDJyJ8twY5EwVSOA8MwMg](https://www.youtube.com/channel/UCvdDJyJ8twY5EwVSOA8MwMg)
-
 
 ## License
 MIT

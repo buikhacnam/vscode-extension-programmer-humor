@@ -3,7 +3,7 @@
   "displayName": "Programmer Humor",
   "publisher": "CaseyBui",
   "description": "Enjoy programming memes inside your VSCode.",
-  "version": "0.0.4",
+  "version": "0.0.5",
   "icon": "logo.png",
   "engines": {
     "vscode": "^1.71.0"

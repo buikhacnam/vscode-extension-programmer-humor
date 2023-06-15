@@ -11,8 +11,10 @@ export const posts = derived(apiData, ($apiData) => {
         // eslint-disable-next-line curly
         if (imgSrc) imgSrc = imgSrc.replace(/&amp;/g, '&');
         return {
-            title: imgSrc? drink.data.title: "",
-            img: imgSrc,
+            // title: imgSrc? drink.data.title: "",
+            title: drink.data.title,
+            // img: imgSrc,
+            img: drink.data.url,
             permalink: drink.data.permalink
         }
     }).filter(drink => drink.title !== "");
