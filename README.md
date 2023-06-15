@@ -27,13 +27,30 @@ npm run watch
 
 Press `F5` to launch the extension in a new VSCode window.
 
+## Publish your own extension
 
+Install vsce:
+
+```
+npm install -g vsce
+```
+
+Login to your publisher account:
+
+```
+vsce login <publisher-name>
+```
+
+Publish the extension:
+
+```
+vsce publish
+```
 
 ## About publisher
+[https://buinam.com](https://buinam.com)
 
-Website: [https://buinam.com](https://buinam.com)
-
-Github: [https://github.com/buikhacnam](https://github.com/buikhacnam)
+[https://github.com/buikhacnam](https://github.com/buikhacnam)
 
 
 ## License
