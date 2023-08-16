@@ -4,7 +4,7 @@
     let loading = true;
     
     onMount(async () => {
-      fetch("https://www.reddit.com/r/programminghumor.json?limit=50")
+     fetch("https://api.reddit.com/r/ProgrammerHumor.json?limit=50")
       .then(response => response.json())
       .then(data => {
             loading = false;

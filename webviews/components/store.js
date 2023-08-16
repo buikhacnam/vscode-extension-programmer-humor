@@ -15,7 +15,6 @@ export const posts = derived(apiData, ($apiData) => {
             title: drink.data.title,
             // img: imgSrc,
             img: drink.data.url,
-            permalink: drink.data.permalink
         }
     }).filter(drink => drink.title !== "");
   }
